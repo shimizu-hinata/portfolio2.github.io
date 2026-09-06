@@ -47,5 +47,13 @@
 		<a href="kaomojiclash.html">詳細ページへ移動</a>
 	  </section>
     </main>
+    <script>
+      const updateScrollDecor = () => {
+        document.body.style.setProperty('--scroll-y', `${window.scrollY}px`);
+        document.body.classList.toggle('scrolled', window.scrollY > 20);
+      };
+      window.addEventListener('scroll', updateScrollDecor, { passive: true });
+      updateScrollDecor();
+    </script>
   </body>
 </html>
