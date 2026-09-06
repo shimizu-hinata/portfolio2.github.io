@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HTML Elements Demo</title>
+    <link rel="stylesheet" href="css/demo.css" />
+  </head>
+  <body>
+    <header>
+      <h1>HTML要素デモページ</h1>
+      <p>MDNのHTMLリファレンスにある主要な要素を実際に確認できるサンプル集です。</p>
+      <nav aria-label="ページ内ナビゲーション">
+        <a href="#text">テキスト</a>
+        <a href="#grouping">グルーピング</a>
+        <a href="#forms">フォーム</a>
+        <a href="#media">メディア</a>
+        <a href="#interactive">インタラクティブ</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="text">
+        <h2>1. テキスト系要素</h2>
+        <p>これは<em>強調</em>、<strong>重要</strong>、<mark>ハイライト</mark>、<small>補足</small>、<del>取り消し</del>、<ins>追加</ins>の例です。</p>
+        <p>H<sub>2</sub>OやE=mc<sup>2</sup>のような上付き・下付き文字も使えます。</p>
+        <p><b>太字</b>、<i>斜体</i>、<u>下線</u>、<q>引用</q>、<cite>引用元</cite>、<time datetime="2026-09-06">2026年9月6日</time>も使えます。</p>
+        <blockquote cite="https://developer.mozilla.org/ja/docs/Web/HTML/Reference/Elements">
+          HTMLの要素を組み合わせることで、意味のある文書構造を作れます。
+        </blockquote>
+        <p><abbr title="HyperText Markup Language">HTML</abbr>はWebページの基礎です。</p>
+        <p><code>&lt;section&gt;</code> や <code>&lt;article&gt;</code> などの要素を使い分けましょう。</p>
+        <p>出力例: <samp>Success: 200 OK</samp>。変数は <var>count</var> です。</p>
+        <pre>&lt;pre&gt;を使うと、入力したままの空白や改行を表示できます。&lt;/pre&gt;</pre>
+      </section>
+
+      <section id="grouping">
+        <h2>2. グルーピング・一覧・表</h2>
+        <hr />
+        <div class="grid two">
+          <article>
+            <h3>リスト</h3>
+            <ul>
+              <li>順不同の項目</li>
+              <li>箇条書き</li>
+              <li>見出しと組み合わせる</li>
+            </ul>
+            <ol>
+              <li>順序付きの項目</li>
+              <li>ステップ</li>
+              <li>手順</li>
+            </ol>
+            <dl>
+              <dt>HTML</dt>
+              <dd>Webの構造を記述する言語</dd>
+              <dt>CSS</dt>
+              <dd>見た目を整える言語</dd>
+            </dl>
+          </article>
+          <article>
+            <h3>表と画像</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>要素</th>
+                  <th>用途</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>table</td>
+                  <td>表</td>
+                </tr>
+                <tr>
+                  <td>figure</td>
+                  <td>図・画像</td>
+                </tr>
+              </tbody>
+            </table>
+            <figure>
+              <img src="https://picsum.photos/seed/html-demo/600/240" alt="HTML要素のイメージ画像" />
+              <figcaption>figureとfigcaptionで説明を付けた例です。</figcaption>
+            </figure>
+          </article>
+        </div>
+      </section>
+
+      <section id="forms">
+        <h2>3. フォーム要素</h2>
+        <aside>
+          <p>フォームではラベル・入力・選択・送信の各要素をまとめて使います。</p>
+        </aside>
+        <form>
+          <fieldset>
+            <legend>お問い合わせフォーム</legend>
+            <label for="name">名前</label>
+            <input id="name" name="name" type="text" placeholder="山田太郎" />
+
+            <label for="email">メールアドレス</label>
+            <input id="email" name="email" type="email" placeholder="name@example.com" />
+
+            <label for="age">年齢</label>
+            <input id="age" name="age" type="number" min="1" max="120" />
+
+            <label for="born">生年月日</label>
+            <input id="born" name="born" type="date" />
+
+            <label for="color">好きな色</label>
+            <input id="color" name="color" type="color" />
+
+            <label for="range">満足度</label>
+            <input id="range" name="range" type="range" min="0" max="100" value="70" />
+
+            <label for="message">メッセージ</label>
+            <textarea id="message" name="message" rows="4" placeholder="ご意見をお聞かせください"></textarea>
+
+            <label for="skill">得意分野</label>
+            <select id="skill" name="skill">
+              <option value="html">HTML</option>
+              <option value="css">CSS</option>
+              <option value="js">JavaScript</option>
+            </select>
+
+            <div>
+              <input id="agree" name="agree" type="checkbox" />
+              <label for="agree">利用規約に同意します</label>
+            </div>
+
+            <div>
+              <input type="radio" id="plan-a" name="plan" value="a" />
+              <label for="plan-a">Aプラン</label>
+              <input type="radio" id="plan-b" name="plan" value="b" />
+              <label for="plan-b">Bプラン</label>
+            </div>
+
+            <button type="submit">送信する</button>
+            <button type="reset" class="secondary">リセット</button>
+          </fieldset>
+        </form>
+
+        <p>進捗状況</p>
+        <progress value="65" max="100">65%</progress>
+        <p>容量使用量</p>
+        <meter value="0.6" min="0" max="1">60%</meter>
+        <p>計算結果: <output id="result" for="range">70</output></p>
+        <script>
+          const rangeInput = document.getElementById('range');
+          const output = document.getElementById('result');
+          rangeInput.addEventListener('input', () => {
+            output.value = `${rangeInput.value}%`;
+          });
+        </script>
+      </section>
+
+      <section id="media">
+        <h2>4. メディア要素</h2>
+        <div class="grid two">
+          <article>
+            <h3>画像と動画</h3>
+            <img src="https://picsum.photos/seed/media-demo/600/320" alt="メディア要素のサンプル画像" />
+            <video controls poster="https://picsum.photos/seed/video-demo/600/320">
+              <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4" />
+              お使いのブラウザでは動画を再生できません。
+            </video>
+          </article>
+          <article>
+            <h3>音声と埋め込み</h3>
+            <audio controls>
+              <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3" type="audio/mpeg" />
+              お使いのブラウザでは音声を再生できません。
+            </audio>
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube動画埋め込み" loading="lazy"></iframe>
+          </article>
+        </div>
+      </section>
+
+      <section id="interactive">
+        <h2>5. インタラクティブ要素</h2>
+        <dialog open>
+          <p>dialog要素を使ったポップアップ風の案内です。</p>
+        </dialog>
+        <details>
+          <summary>クリックして詳細を表示</summary>
+          <p>detailsとsummaryを使うと、折りたたみ可能な説明を作れます。</p>
+        </details>
+
+        <p><span class="badge">新着</span><span class="badge">HTML</span><span class="badge">デモ</span></p>
+
+        <p>この文章の一部は<ruby>漢<rt>かん</rt></ruby><ruby>字<rt>じ</rt></ruby>のルビ付きです。</p>
+
+        <p>以下はサンプルの<canvas id="demoCanvas" width="240" height="120"></canvas></p>
+        <script>
+          const canvas = document.getElementById('demoCanvas');
+          const ctx = canvas.getContext('2d');
+          ctx.fillStyle = '#2563eb';
+          ctx.fillRect(20, 20, 200, 80);
+          ctx.fillStyle = 'white';
+          ctx.font = '20px sans-serif';
+          ctx.fillText('Canvas demo', 50, 65);
+        </script>
+      </section>
+    </main>
+
+    <footer>
+      <address>
+        HTML要素のデモページ<br />
+        <a href="https://developer.mozilla.org/ja/docs/Web/HTML/Reference/Elements">MDN HTML Reference</a>
+      </address>
+    </footer>
+  </body>
+</html>
