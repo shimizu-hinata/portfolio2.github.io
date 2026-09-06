@@ -177,6 +177,22 @@ figcaption {
   margin-top: 0.4rem;
 }
 
+iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 12px;
+}
+
+.movie-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 16 / 9;
+}
+
 .badge {
   display: inline-block;
   padding: 0.2rem 0.6rem;
